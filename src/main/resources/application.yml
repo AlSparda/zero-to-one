@@ -1,0 +1,17 @@
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: zero-to-one
+  web:
+    resources:
+      add-mappings: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/zero}
+    password: ${DATASOURCE_PASSWORD:postgres}
+    username: ${DATASOURCE_USERNAME:postgres}
+  liquibase:
+    enabled: true
+    change-log: db/changelog/master-changelog.xml
